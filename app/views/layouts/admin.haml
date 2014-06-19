@@ -1,0 +1,14 @@
+%html{lang: "en"}
+  %body
+    =partial 'layouts/admin_menu'
+    .container-fluid          
+      .row
+        .col-md-12.user-navbar
+        .col-md-8.col-md-push-2
+          .header
+            =partial 'layouts/header'
+          .home-panel
+            =partial 'shared/flash' 
+            =yield
+            =partial 'layouts/footer'          
+        .col-md-2.side-rail

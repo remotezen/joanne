@@ -1,0 +1,7 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:recipes, :index)
+  %li.active=link_to tag_icon(:plus, pat(:new)), url(:recipes, :new)
+.tabs-content
+  -form_for :recipe, url(:recipes, :create), :class => 'form-horizontal' do |f|
+    =error_messages_for(@recipe)
+    =partial 'recipes/form', :locals => { :f => f }

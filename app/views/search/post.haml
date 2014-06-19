@@ -1,0 +1,27 @@
+%ul.search-engine-results
+  -@results.each do |p|
+    -if @t == 'posts'
+      %li
+        =link_to "#{p.title}",
+        url_for("blog/show/#{p.slug}") 
+        %p
+          =truncate_words("#{p.body}",:length=>20)
+    -elsif @t == 'recipes'
+      %li
+        =link_to "#{p.title}",
+        url_for(:recipes, :show, :id => p.slug) 
+        %p
+          =truncate_words("#{p.content}",:length=>20)
+    -elsif @t == 'comments'
+      %li
+        =link_to truncate_words("#{p.comment}", :length=>8),url_for(:comments,:show,:id=>p.slug)
+        %p
+          =truncate_words(p.comment, :length=>20)
+    -elsif @t == 'accounts'  
+      %p
+        =link_to "#{p.user_name}", url_for(:accounts, :show, :id => p.id)
+        =link_to "#{p.email}", url_for(:accounts, :show, :id => p.id)
+        =link_to "#{p.surname}, #{p.name}"
+
+      
+

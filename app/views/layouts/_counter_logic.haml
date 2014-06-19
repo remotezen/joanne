@@ -1,0 +1,25 @@
+%li
+  .user-info.code.xsmall
+    -if logged_in?
+      %kbd
+        Logged in
+    -else
+      %code
+        not logged in
+    -if cookie_return > 0        
+      %li       
+        %code
+          ="login attempts #{cookie_return }"
+    -if last_hit > 0      
+      %li.last-hit
+        we have been visited
+      %li.last-hit-num
+        =pluralize(last_hit,"time")
+      %li  
+        %code
+          ="you have been on site for #{time_ago_in_words(session[:since])}"
+      -if logged_in?    
+        %li    
+          Welcome
+          =session[:name] unless nil?
+

@@ -1,0 +1,14 @@
+%h3
+%ul.search-engine-results
+  -unless @search.nil?
+    =partial 'search/search', :collection=> @search
+  -else
+    %h3 
+      -if is_user?
+        ="no records  matched your search terms" 
+      -else
+        = "must be logged in to search"
+
+=will_paginate @search unless @search.nil?
+
+

@@ -1,0 +1,7 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:steps, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url('steps/new/?:id')
+  %li.active=link_to tag_icon(:plus, pat(:new)), url(:steps, :new)
+.tabs-content
+  -form_for :recipe, url(:steps, :update, :id => @step.id), :method => :put,  :enctype=>"multipart/form-data",:class => 'form-horizontal' do |f|
+    =partial 'steps/form', :locals => { :f => f }

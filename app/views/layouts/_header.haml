@@ -1,0 +1,23 @@
+%head
+  %link{href: "/favicon.ico", rel: "shortcut icon", type: "image/x-icon"}/
+  %meta{charset: "utf-8"}/
+  %title 
+    -unless @title.nil?
+      =@title 
+    -else
+      ="Jo Goes Green"
+
+
+
+  %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+  %meta{content: "", name: "description"}/
+  %meta{content: "", name: "author"}/
+  -#%script{src: "/assets/javascripts/application", type: "text/javascript"}
+  -#%link{href: "/assets/stylesheets/application", rel: "stylesheet", type: "text/css"}/
+  -#=stylesheet_link_tag 'bootstrap','bootstrap-responsive','site','post','recipe','comments','pop_box','navbar','main_layout'
+  = stylesheet_link_tag 'bootstrap','post','recipe','comments','pop_box','navbar','strength',
+    'main_layout','application'
+  -#=stylesheet_link_tag 'application'
+  -#=stylesheet_link_tag '/assets/application'
+
+  

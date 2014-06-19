@@ -1,0 +1,2 @@
+thin -C /home/grit/Programming/Sinatra/jo/config  -c /home/grit/Programming/Sinatra/jo/blog.app --servers 3 -e production
+thin start -C config/blog_app.yml  -p 3001 --ssl --ssl-key-file /public/ssl/server.key --ssl-cert-file /public/ssl/server.crt 

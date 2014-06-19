@@ -1,0 +1,45 @@
+@import "variable";
+@import "blog_mixins";
+.comment-user-name{ 
+ background:rgb(140,184,122);
+ font-size:1.3em;
+ font-family:'volk';
+}
+.comment-image img{ 
+  background:#fff;
+  padding:1em;
+  border: solid $text-color 1px;
+  @include border-radius(4px);
+  text-align:center;
+}
+.comment-date{ 
+  font-style:italic;
+  font-size:.8em;
+  background:#FFFafa;
+  width: 15em;
+  padding:.3em;
+  border: solid $text-color 1px;
+  @include border-radius(4px);
+}
+.comment-spacing{ 
+  text-align:center;
+}
+.comment-container{ 
+  background:#FFF;
+  padding:2em;
+  border: solid $text-color 1px;
+  @include border-radius(4px);
+}
+.comment-comment{ 
+  margin:2em 2em;
+  background: rgb(140,184,122);
+  color:#333;
+  font-family:'volk';
+  padding:2em;
+  border: solid $text-color 1px;
+  @include border-radius(4px);
+}
+.comment-name{ 
+  font-size:1.5em;
+  
+}

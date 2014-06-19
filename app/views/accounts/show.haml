@@ -1,0 +1,30 @@
+-title do
+  -@account.user_name
+    
+%table#list.table.table-striped.table-condensed
+  %thead
+    %tr
+      %th
+        id
+      %th
+        email
+      %th
+        user name
+      %th
+        signed up
+      %th
+        role  
+  %tbody    
+    %tr
+      %td
+        =@account.id
+      %td
+        =@account.email
+      %td
+        =link_to @account.user_name, url_for(:accounts, :show, :id => @account.id)
+      %td
+        ="#{ time_ago_in_words(@account.created_at)} ago"
+      %td
+        =@account.role
+      %td
+  

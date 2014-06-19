@@ -1,0 +1,61 @@
+%ul.nav.nav-tabs
+  %li.active=link_to tag_icon(:list, pat(:list)), url(:comments, :index)
+.tabs-content
+  =will_paginate @comments
+  .meta-link
+    =link_to "first",url_for(:accounts, :reindex)
+    =link_to "last",url_for(:accounts, :index)
+
+  %table#list.table.table-striped.table-hover.table-condensed
+    %thead
+      %tr
+        %th.header.list-menu
+          .dropdown
+            %a.list-menu-toggle.dropdown-toggle{:href => '#', :'data-toggle' => :dropdown}
+              =tag_icon :magic
+              %span.caret
+            %ul.list-menu.dropdown-menu{:role => :menu}
+              %li.list-menu-wrapper=link_to tag_icon(:check, pat(:select_all)), '#', :id => 'select-all', :class => 'list-menu-link'
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon(:'check-empty', pat(:deselect_all)), '#', :id => 'deselect-all', :class => 'list-menu-link list-menu-link-disabled'
+              %li.list-menu-divider.divider
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon(:trash, pat(:delete_selected)), '#', :id => 'delete-selected', :class => 'list-menu-link list-menu-link-disabled'
+                .list-menu-popover-delete-selected.popover.right
+                  .arrow
+                  %h3.popover-title=pat(:delete_selected_title)
+                  .popover-content
+                    -form_tag url(:comments, :destroy_many), :method => :delete do
+                      =hidden_field_tag :account_ids, :'data-delete-many-ids' => true
+                      =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
+                      .btn.btn-default.btn-small.cancel=pat(:cancel)
+        %th.header= mat(:comment, :id)
+        %th.header= mat(:comment, :post_id)
+        %th.header= mat(:comment, :comment)
+        %th.header= mat(:comment, :created_at)
+        %th.header.list-row-action-header
+
+    %tbody
+      -@comments.each do |comment|
+        %tr.list-row
+          %td.list-column.list-selectable
+            =check_box_tag 'comment_ids[]', :value => comment.id, :class => 'list-selectable-checkbox'
+          %td.list-column=comment.id
+          %td.list-column=comment.post_id
+          %td.list-column=link_to(truncate(comment.comment), url_for(:comments, :show, :id => comment.slug))
+          %td.list-column=comment.created_at
+          %td.list-column.list-row-action
+            .list-row-action-wrapper
+              =link_to tag_icon(:edit), :href => url(:comments, :edit, :id => comment.id), 
+                :rel => :tooltip, :title => "#{pat(:edit)} account", 
+                :class => 'list-row-action-wrapper-link'
+              =link_to tag_icon(:trash), :rel => :tooltip, :title => "delete account", 
+                :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              .popover.list-row-action-popover-delete-one.left
+                .arrow
+                %h3.popover-title="Delete Comment #{ comment.id}"
+                .popover-content
+                  -form_tag url(:comments, :destroy, :id => comment.id), :method => :delete do
+                    =submit_tag "delete", :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
+                    .btn.btn-default.btn-small.cancel="cancel"
+

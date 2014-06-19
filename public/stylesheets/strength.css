@@ -1,0 +1,30 @@
+/* CSS Document */
+.strength_meter {
+  height: 23px;
+  width: 154px;
+  background: silver; }
+
+.strength_meter div {
+  height: 23px;
+  width: 100%;
+  height: 23px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  line-height: 23px; }
+
+.veryweak {
+  background-color: #FFA0A0;
+  border-color: #f04040 !important; }
+
+.weak {
+  background-color: #FFB78C;
+  border-color: #ff853c !important; }
+
+.medium {
+  background-color: #FFEC8B;
+  border-color: #ffcc00 !important; }
+
+.strong {
+  background-color: #C3FF88;
+  border-color: #8dff1c !important; }

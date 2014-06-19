@@ -1,0 +1,2 @@
+%li.recipes-recent
+  =link_to "#{truncate_words(recipe.content,:length=>15)}...", url_for(:recipes, :show, :id => recipe.slug)

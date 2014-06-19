@@ -1,0 +1,8 @@
+%li{ class:" archive-list-item #{cycle}"}
+  -if @name == "Post"
+    =link_to archive.title, url_for(:blog, :show, :id=>archive.slug)
+  -elsif @name == "Recipe"
+    =link_to archive.title, url_for(:recipes, :show, :id=>archive.slug)
+  -else 
+    =link_to truncate_words(archive.comment,length:8), url_for(:comments, :show, :id=>archive.slug)
+

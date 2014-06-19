@@ -1,0 +1,24 @@
+.container
+  .blog-date
+    ="#{return_month(@t.month)} #{@t.day} #{@t.year}"
+  .row
+    .col-lg-8.col-md-8.col-xs-12.center-block
+      .show-panel
+        %ul
+          %li.show-panel-title
+            %strong
+              =@post.title
+          %li.show-panel-image
+            =image_tag @post.image
+          %li.show-panel-body
+            =@post.body
+          %li  
+            #main
+          %li    
+            .comment-link
+              =link_to "recipe", url_for(:recipes, :show, :id =>@post.recipe.slug)
+              =link_to "comment", url_for(:comments, :new, :id =>@post.id)
+          %li   
+            =partial 'comments/comment', :collection=>@comments
+
+

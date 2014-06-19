@@ -1,0 +1,54 @@
+-#@arr = ingredient(@recipe.content)
+.container
+  .row
+    .col-lg-7.col-md-7.col-xs-11.center-block
+      %h2
+        =image_tag 'cross_sm.png'
+        Recipe Page
+        .small
+          %br
+            -title do
+              #{@recipe.title} 
+            -if @recipe.post   
+              .tiny-link
+                =link_to @recipe.post.title, url_for(:blog, :show, :id =>@recipe.post.slug)
+  .row
+    .col-lg-6.col-md-6.col-xs-10.center-block
+      %table.table{ background:"#FFF"}
+        %thead
+          %h4
+            %tr{backgroud:"#FFF" }
+              %th.header
+                Main ingredients
+              %th.header
+                Course
+              %th.header
+                Cooking Time
+              %th.header
+                Prep Time
+          %br
+        .small      
+          %tbody    
+            %tr.table-row{background:"white" }    
+              %td.table-cell
+                =@recipe.main_ingredient
+              %td.table-cell
+                =@recipe.course
+              %td.table-cell
+                =@recipe.cooking_time
+              %td.table-cell
+                =@recipe.prep_time
+  .row          
+    .col-lg-6.col-md-6.col-xs-10.center-block.ingredient
+      .glyphicon.glyphicon-list-alt.list
+        Ingredients
+      %ul.ingredient-list
+        =partial 'recipes/ingredient', :collection=> ingredient(@recipe.content)
+  -unless @recipe.toppings.nil?
+    .row    
+      .col-lg-6.col-md-6.col-xs-10.center-block
+        =partial 'recipes/topping', :collection=>@recipe.toppings
+  .row.steps-format
+    =partial 'recipes/step', :collection=>@recipe.steps
+        
+

@@ -1,0 +1,36 @@
+%nav.navbar-wrapper.navbar-fixed-top.navbar-custom{role: "navigation"}
+  .jumbotron.logo
+    =image_tag('admin.png')
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", 
+        "data-toggle" => "collapse", type: "button"}
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.main-menu
+        %li.active
+          %a{href: "/"}
+            %span.glyphicon.glyphicon-home.tope
+            Home
+        %li
+          %a{href: "#{ url_for(:recipes, :index)}"}
+            %span.glyphicon.glyphicon-cutlery.tope
+            Recipes
+        %li
+          %a{href: "#{ url_for(:comments, :index)}"}
+            %span.glyphicon.glyphicon-comment.tope
+            Comments
+        %li
+          %a{href: "#{ url_for(:blog, :index)}"}
+            %span.glyphicon.glyphicon-bullhorn.tope
+            Posts 
+        %li
+          %a{href: "#{ url_for(:accounts, :index)}"}
+            %span.glyphicon.glyphicon-user.tope
+            Accounts 
+        %li
+          %a{href: "#{ url_for(:search, :admin_search_new)}"}
+            %span.glyphicon.glyphicon-search.tope
+            Search
+        %li    
+          = link_to url_for(:sessions, :logout), class: "btn btn-default" do
+            %i.glyphicon.glyphicon-off.tope2

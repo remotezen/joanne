@@ -1,0 +1,8 @@
+-unless current_user.nil?
+  %li 
+    =link_to "logout", url("sessions/logout")
+    =link_to "Profile", url("accounts/edit/#{current_user.id}")
+-else
+  %li
+    =link_to "login", url_for('sessions/login') 
+

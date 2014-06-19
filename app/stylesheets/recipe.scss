@@ -1,0 +1,140 @@
+@import 'variable';
+@import 'blog_mixins';
+.arial-text{ 
+  font-family:"tahoma";
+  color: $text-color;
+}
+
+.table-row{ 
+  margin:3.5em 3.5em;;
+  @include border-radius(8px);
+  padding:2em;
+}
+.table-cell{ 
+  color:$text-color;
+  background:#fff;
+
+}
+.table-row.td{ 
+  padding-bottom:1em;
+}
+
+.first{ 
+  text-align:left
+}
+.second{ 
+  text-align:right;
+}
+.ingredient{ 
+  border:1px dashed black;
+  padding:2em;
+  margin:2em 2em;
+  font-style:bold;
+  font-family:"tahoma";
+  background:#fff;
+  font-size:1.1em;
+  text-align:center;
+  color:#999;
+  @include border-radius(8px);
+}
+.ingredient td{ 
+  font-size:0.8em;
+  font-family:"tahoma";
+}
+.ingredient-header{ 
+  width:60%;
+  text-align:center;
+}
+.ingredient table{ 
+  width:60%;
+  
+}
+
+.header{ 
+  color:#547e44;
+}
+.top-list{ 
+  color:$text-color;
+  font-family:'arial';
+  line-height:1.2em;
+}
+.under-top-list
+{ 
+  color:$text-color;
+  font-size:1.2em;
+  width:80%;
+}
+.toppings{ 
+  text-align:center;
+  margin:2em 2em;
+  border:1px dashed black;
+  background:#fff;
+  font-family:'volk';
+  font-size:1.2em;
+  color:$deep-green;
+  @include border-radius(8px);
+  padding:2em;
+}
+.toppings-header{ 
+  text-align:center;
+}
+.topping-description{ 
+  margin: 2em 2em;
+  font-family:"volk";
+  color:$text-color;
+  line-height:1.3em;
+  background:#fff;
+  
+  border:1px dashed black;
+  @include border-radius(8px);
+  padding:2em;
+}
+.list{ 
+  font-size:1.2em;
+  line-height:1.2em;
+  margin-bottom:2em;
+  text-align:center;
+  color:$deep-green;
+  width:80%;
+}
+.recipe-table{ 
+  background:#fff;
+  border:solid 1px $text-color;
+  @include border-radius(8px);
+  padding:1.2em 1.2em;
+  text-align:center;
+}
+.step-image{ 
+  border: solid $text-color 1px;
+  @include border-radius(8px);
+  padding:2em;
+  background:#FFF;
+  margin-left: auto;
+  margin-right: auto;
+}
+.step-image img{ 
+  width:75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.recipes-recent a{ 
+  font-size:1.3em;
+  color: $deep-green;
+  text-align:center;
+  line-height:1.2em;
+  margin-bottom:10px;
+
+}
+.recipes-recent-container{ 
+  background:$light-green;
+  border:dashed 1px $deep-green;
+  padding:8px;
+  @include border-radius(8px);
+  width: 40%;
+
+}
+.recent-header{ 
+  text-align: left ;
+  color: $deep-green;
+  font-size: 1.5em;
+}

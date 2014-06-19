@@ -1,0 +1,117 @@
+
+; <<>> DiG 9.8.1-P1 <<>> jogoesgreen.com +trace
+;; global options: +cmd
+.			463886	IN	NS	c.root-servers.net.
+.			463886	IN	NS	g.root-servers.net.
+.			463886	IN	NS	k.root-servers.net.
+.			463886	IN	NS	a.root-servers.net.
+.			463886	IN	NS	l.root-servers.net.
+.			463886	IN	NS	h.root-servers.net.
+.			463886	IN	NS	b.root-servers.net.
+.			463886	IN	NS	i.root-servers.net.
+.			463886	IN	NS	j.root-servers.net.
+.			463886	IN	NS	e.root-servers.net.
+.			463886	IN	NS	m.root-servers.net.
+.			463886	IN	NS	d.root-servers.net.
+.			463886	IN	NS	f.root-servers.net.
+;; Received 228 bytes from 127.0.1.1#53(127.0.1.1) in 57 ms
+
+com.			172800	IN	NS	i.gtld-servers.net.
+com.			172800	IN	NS	d.gtld-servers.net.
+com.			172800	IN	NS	j.gtld-servers.net.
+com.			172800	IN	NS	g.gtld-servers.net.
+com.			172800	IN	NS	k.gtld-servers.net.
+com.			172800	IN	NS	m.gtld-servers.net.
+com.			172800	IN	NS	e.gtld-servers.net.
+com.			172800	IN	NS	h.gtld-servers.net.
+com.			172800	IN	NS	b.gtld-servers.net.
+com.			172800	IN	NS	c.gtld-servers.net.
+com.			172800	IN	NS	f.gtld-servers.net.
+com.			172800	IN	NS	l.gtld-servers.net.
+com.			172800	IN	NS	a.gtld-servers.net.
+;; Received 505 bytes from 192.33.4.12#53(192.33.4.12) in 49 ms
+
+jogoesgreen.com.	172800	IN	NS	ns1.vpsville.com.
+jogoesgreen.com.	172800	IN	NS	ns2.vpsville.com.
+;; Received 110 bytes from 192.55.83.30#53(192.55.83.30) in 59 ms
+
+;; Received 12 bytes from 67.227.82.3#53(67.227.82.3) in 80 ms
+
+
+; <<>> DiG 9.8.1-P1 <<>> jogoesgreen.com +trace
+;; global options: +cmd
+.			463863	IN	NS	m.root-servers.net.
+.			463863	IN	NS	h.root-servers.net.
+.			463863	IN	NS	j.root-servers.net.
+.			463863	IN	NS	c.root-servers.net.
+.			463863	IN	NS	g.root-servers.net.
+.			463863	IN	NS	i.root-servers.net.
+.			463863	IN	NS	l.root-servers.net.
+.			463863	IN	NS	f.root-servers.net.
+.			463863	IN	NS	e.root-servers.net.
+.			463863	IN	NS	k.root-servers.net.
+.			463863	IN	NS	d.root-servers.net.
+.			463863	IN	NS	a.root-servers.net.
+.			463863	IN	NS	b.root-servers.net.
+;; Received 228 bytes from 127.0.1.1#53(127.0.1.1) in 62 ms
+
+com.			172800	IN	NS	j.gtld-servers.net.
+com.			172800	IN	NS	e.gtld-servers.net.
+com.			172800	IN	NS	f.gtld-servers.net.
+com.			172800	IN	NS	l.gtld-servers.net.
+com.			172800	IN	NS	k.gtld-servers.net.
+com.			172800	IN	NS	c.gtld-servers.net.
+com.			172800	IN	NS	g.gtld-servers.net.
+com.			172800	IN	NS	b.gtld-servers.net.
+com.			172800	IN	NS	m.gtld-servers.net.
+com.			172800	IN	NS	d.gtld-servers.net.
+com.			172800	IN	NS	a.gtld-servers.net.
+com.			172800	IN	NS	i.gtld-servers.net.
+com.			172800	IN	NS	h.gtld-servers.net.
+;; Received 505 bytes from 192.33.4.12#53(192.33.4.12) in 58 ms
+
+jogoesgreen.com.	172800	IN	NS	ns1.vpsville.com.
+jogoesgreen.com.	172800	IN	NS	ns2.vpsville.com.
+;; Received 110 bytes from 192.42.93.30#53(192.42.93.30) in 95 ms
+
+;; Received 12 bytes from 67.227.82.3#53(67.227.82.3) in 78 ms
+
+
+; <<>> DiG 9.8.1-P1 <<>> jogoesgreen.com +trace
+;; global options: +cmd
+.			463818	IN	NS	i.root-servers.net.
+.			463818	IN	NS	k.root-servers.net.
+.			463818	IN	NS	f.root-servers.net.
+.			463818	IN	NS	g.root-servers.net.
+.			463818	IN	NS	j.root-servers.net.
+.			463818	IN	NS	c.root-servers.net.
+.			463818	IN	NS	a.root-servers.net.
+.			463818	IN	NS	l.root-servers.net.
+.			463818	IN	NS	d.root-servers.net.
+.			463818	IN	NS	h.root-servers.net.
+.			463818	IN	NS	b.root-servers.net.
+.			463818	IN	NS	m.root-servers.net.
+.			463818	IN	NS	e.root-servers.net.
+;; Received 228 bytes from 127.0.1.1#53(127.0.1.1) in 53 ms
+
+com.			172800	IN	NS	a.gtld-servers.net.
+com.			172800	IN	NS	b.gtld-servers.net.
+com.			172800	IN	NS	c.gtld-servers.net.
+com.			172800	IN	NS	d.gtld-servers.net.
+com.			172800	IN	NS	e.gtld-servers.net.
+com.			172800	IN	NS	f.gtld-servers.net.
+com.			172800	IN	NS	g.gtld-servers.net.
+com.			172800	IN	NS	h.gtld-servers.net.
+com.			172800	IN	NS	i.gtld-servers.net.
+com.			172800	IN	NS	j.gtld-servers.net.
+com.			172800	IN	NS	k.gtld-servers.net.
+com.			172800	IN	NS	l.gtld-servers.net.
+com.			172800	IN	NS	m.gtld-servers.net.
+;; Received 493 bytes from 193.0.14.129#53(193.0.14.129) in 77 ms
+
+jogoesgreen.com.	172800	IN	NS	ns1.vpsville.com.
+jogoesgreen.com.	172800	IN	NS	ns2.vpsville.com.
+;; Received 110 bytes from 192.43.172.30#53(192.43.172.30) in 102 ms
+
+;; Received 12 bytes from 67.227.82.2#53(67.227.82.2) in 78 ms
+

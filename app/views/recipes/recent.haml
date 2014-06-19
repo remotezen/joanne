@@ -1,0 +1,8 @@
+-counter = 0
+%ul.recipes-recent-container 
+  %li.recent-header
+    =image_tag "cross_sm.png"
+    Recent Recipes
+  =partial 'recipes/recipe', :collection =>@recipes, :locals =>{:counter => counter }
+  %li
+    =will_paginate @recipes

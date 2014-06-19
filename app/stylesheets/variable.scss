@@ -1,0 +1,37 @@
+$background-color: #ccc;
+$margin-top: 80px;
+$main-font-size: small;
+$calendar-font-size: small;
+$masthead-font-size:2em;
+$masthead-bgcolor:#ccc;
+$mainpage-height: 80%;
+$odd-background:#bbb;
+$odd-color: #ddd;
+$even-background:#999;
+$even-color:#ddd;
+$menu-color:#6f9e29;
+$menu-link-color:#FFF;
+$caption-heading:#33ff00;
+$sidebar:#6f9e29;
+$link-color:#80a6d6;
+$grey: #adadad;
+$deep-green: #547e44;
+$med-green: rgb(140,184,122);
+$link-color:#7Aaabb;
+$text-color:#172112;
+$light-green:#CBDFC3;
+$yellow: #fff6bf;
+ 
+
+@font-face{
+	font-family:'volk';
+	src: url('../fonts/Montserrat.otf');
+	src: url('../fonts/Vollkorn-Regular.svg');
+	src: url('../fonts/Vollkorn-Regular.woff');
+	src: url('../fonts/Vollkorn-Regular.otf');
+}
+//started with the show blog color
+$blog-body-color:#708090;
+
+
+

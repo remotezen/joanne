@@ -1,0 +1,20 @@
+.comment-link.comment-input
+-button_to 'search',url(:comments,:create), 
+  :class => 'form-search search' do 
+  %table
+    %tr
+      %td
+        =text_area_tag :comment,:class =>"form-control", :id => "commented"
+        =hidden_field_tag :post_id, :value => params[:id]
+        =hidden_field_tag :account_id, :value => current_user.id
+      %td
+        %button.btn.btn-info>
+          %span.glyphicon.glyphicon-comment
+    %tr    
+      %td     
+        %p#counter
+          %span 0 
+          characters
+    %tr    
+      %td
+        %script{src: "http://www.google.com/recaptcha/api/challenge?k=6LepqPISAAAAAPeBSlBCuBT0xCVBS8GX1Mzd7xS1", type: "text/javascript"} :cdata

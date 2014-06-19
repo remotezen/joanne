@@ -1,0 +1,14 @@
+.toppings-header
+  %h3
+    =partial 'shared/shopping', :locals=>{:f =>topping.title}
+    .small
+      %ul.toppings
+        %br  
+          .glyphicon.glyphicon-list-alt.list 
+          Ingredients
+          =partial 'recipes/top', 
+              :collection => ingredient(topping.ingredients)
+  %h3
+    How to prepare
+  .topping-description
+    =topping.description

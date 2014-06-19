@@ -1,0 +1,50 @@
+.row
+  .col-md-8.block-center
+    - error = @account.errors.include?(:name)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :name, :class => 'control-label'
+      .controls
+        =f.text_field :name, :class => 'form-control input-large input-with-feedback', :autofocus => true, :id => 'account_name'
+        %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : '' 
+        %span.error
+          this field is required  
+    - error = @account.errors.include?(:surname)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :surname, :class => 'control-label'
+      .controls
+        =f.text_field :surname, :class => 'form-control input-large input-with-feedback', :id => 'account_surname'
+        %span.help-inline=error ? f.error_message_on(:surname, :class => 'text-error') : '' 
+        %span.error
+          user name input field  cannot be blank
+    - error = @account.errors.include?(:username)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :username, :class => 'control-label'
+      .controls
+        =f.text_field :user_name, :class => 'form-control input-large input-with-feedback', :id =>'account_user_name'
+        %span.help-inline=error ? f.error_message_on(:user_name, :class => 'text-error') : '' 
+        %span.error
+          this field is required  
+    - error = @account.errors.include?(:email)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :email, :class => 'control-label'
+      .controls
+        =f.text_field :email, :class => 'form-control input-large input-with-feedback', :id=>'account_email'
+        %span.help-inline=error ? f.error_message_on(:email, :class => 'text-error') : '' 
+        %span.error
+          a valid email address is required
+ 
+    - error = @account.errors.include?(:password)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :password, :class => 'control-label'
+      .controls
+        =f.password_field :password, :id => 'account_password', :class => 'form-control input-large input-with-feedback'
+        %span.help-inline=error ? f.error_message_on(:password, :class => 'text-error') : '' 
+    - error = @account.errors.include?(:password_confirmation)
+    %fieldset.control-group{:class => error ? 'has-error' : ''}
+      =f.label :password_confirmation, :class => 'control-label'
+      .controls
+        =f.password_field :password_confirmation, :class => 'form-control input-large input-with-feedback'
+        %span.help-inline=error ? f.error_message_on(:password_confirmation, :class => 'text-error') : '' 
+    .form-actions
+      %br
+        =f.submit "save", :class => 'btn btn-primary', :id=>'account_save'

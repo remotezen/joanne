@@ -1,0 +1,5 @@
+.archive-header
+  =partial 'shared/count', :locals =>{ :name => @name}
+%ul.archive-show.table-striped
+  =partial 'blog/archive',:collection => @archive
+

@@ -1,0 +1,23 @@
+
+%ul.nav.nav-pills.foot-list
+  %li
+    %div
+      © 2014
+  %li.active
+    %div
+      %a{href: "#"} About Us
+  %li
+    %div
+      %a{href: "#"} Privacy Policy
+  =partial 'layouts/counter_logic'    
+       
+-#
+
+=javascript_include_tag 'jquery-2.1.0','jquery-ujs','jquery-pjax/jquery.pjax', 'jquery.countable',
+'bootstrap/bootstrap', 'bootstrap/affix', 'bootstrap/alert', 'bootstrap/button','bootstrap/carousel','bootstrap/collapse', 
+'bootstrap/dropdown','bootstrap/tooltip','bootstrap/transition', 'bootstrap/modal',
+'bootstrap/popover','bootstrap/scrollspy', 'bootstrap/tab','source/jquery.fancybox','strength','application'
+-#
+  =javascript_include_tag 'jquery-1.9.0.min', (Padrino.env == :production ? 'bootstrap/bootstrap.min' : %w[bootstrap/affix bootstrap/alert bootstrap/button bootstrap/carousel bootstrap/collapse bootstrap/dropdown  bootstrap/tooltip bootstrap/transition  bootstrap/modal bootstrap/popover bootstrap/scrollspy bootstrap/tab jquery.colorbox]), :application
+
+

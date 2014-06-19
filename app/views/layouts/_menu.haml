@@ -1,0 +1,49 @@
+%nav.navbar-wrapper.navbar-fixed-top.navbar-custom{role: "navigation"}
+  .jumbotron.logo
+    =image_tag('bike.png')
+  .container
+    .navbar-header
+      %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", 
+        "data-toggle" => "collapse", type: "button"}
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.main-menu
+        %li.active
+          %a{href: "/"}
+            %span.glyphicon.glyphicon-home.tope
+            Home
+        -if is_user?
+          %li
+            %a{href: "#{ url_for(:recipes, :recent)}"}
+              %span.glyphicon.glyphicon-cutlery.tope
+              Recipes
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            %span.glyphicon.glyphicon-book.tope
+            About Us
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: "#"} Company Details
+            %li
+              %a{href: "#"} Contact Us
+        -unless banned?    
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %span.glyphicon.glyphicon-user.tope
+              User 
+              %b.caret
+            %ul.dropdown-menu
+              =partial 'layouts/menu_logic' 
+
+        -if !current_user.nil? and current_user.role == 'admin'    
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+              %span.glyphicon.glyphicon-tower.tope
+              Admin 
+              %b.caret
+            %ul.dropdown-menu
+              =partial 'layouts/admin_menu_logic' 
+        .navbar-form.navbar-right{action:"/search/create"}
+          =partial 'layouts/search'
+        
+

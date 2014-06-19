@@ -1,0 +1,5 @@
+%li
+  =link_to search.title, url_for("blog/show/#{search.slug}") 
+  %p 
+    =truncate_words("#{search.body}",:length=>20)
+  

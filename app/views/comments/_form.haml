@@ -1,0 +1,8 @@
+=f.label :comment
+=f.text_area  :comment, :id=>"comment-input", :rows=>8, :cols=>50 
+=f.hidden_field :post_id, :value =>params[:id]
+=f.submit :class=> 'btn', :value=>"comment"
+%script
+  var elem = $("#chars");
+  $("#comment-input").limiter(100, elem);
+

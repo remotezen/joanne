@@ -1,0 +1,31 @@
+.row
+  .col-md-8.home-image
+    =session['user']
+    -unless is_user? 
+      .new-user
+        %p 
+          =image_tag("cross_sm.png")
+          Welcome to Jo Goes Green real food for real people 
+          =link_to "Sign up", url_for(:accounts, :new)
+
+    %ul.row
+      =flashed
+      -@posts.each do |post|
+        %li
+        %li.col-lg-2.col-md-2.col-sm-3.col-xs-4.blog-image
+          =image_tag("#{post.image}",size:150)
+          .image-link
+            =link_to split_date(post.created_at), url_for(:blog, :show, 
+            :id=>post.slug) 
+
+    .image-instructions
+      %kbd      
+        %small
+          Click on image to expand it. Click off images to return.
+    #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-body
+        / /.modal-content
+      / /.modal-dialog
+    / /.modal

@@ -1,0 +1,7 @@
+.admin-search
+  =form_tag  url(:search, :admin_search_create), :class=> 'login form-horizontal' do
+    %label.col-lg-2.control-label{:for => :search}='search'
+    .col-lg-6=search_field_tag :search, :value => params[:search], :autofocus => true, :class =>'form-control'
+    %fieldset.control-group
+      =select_tag(:table, :options => [:recipes,:comments,:posts, :accounts], :selected => :posts)
+      =submit_tag pat(:search), :class => 'btn btn-primary'

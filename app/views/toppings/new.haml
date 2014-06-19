@@ -1,0 +1,8 @@
+%ul.nav.nav-tabs
+  -unless @recipe.nil?
+    //%li=link_to tag_icon(:list, pat(:list)), url(:steps, :index,:id =>@recipe.id)
+    %li.active=link_to tag_icon(:plus, pat(:new)), url(:steps, :new, :id => @recipe.id)
+.tabs-content
+  -form_for :topping, url(:toppings, :create), 
+    :class => 'form-horizontal' do |f|
+    =partial 'toppings/form',  :locals => {:f => f }

@@ -1,0 +1,64 @@
+//custom helper split_date in posts_helper
+//custom helper archive copy archive date to 
+//view
+-#
+  -content_for :blog_time_line do
+    %ul
+    -@@post_months.each do |post|
+      %li=link_to( post.title, url_for(:blog, :show, :id => post.slug))
+      %br 
+-#
+  -content_for :blog_time_line do
+    -@@post_months.sort.reverse.each do |months, posts| 
+      =link_to archive(months), url_for(:blog, :archive, 
+      :id=>split_date(months), :month=>archive(months) )
+-#Date.parse( s.gsub(/, */, '-') )
+-#=Blog::App.cache.get(:recipe_months).split(',').to_a.inspect
+
+  %br
+    -content_for :recipe_time_line  do
+      -@@recipe_months.sort.reverse.each do |months, recipes| 
+        =link_to archive(months), url_for(:recipes,:archive,
+          :id=>split_date(months),:month=>archive(months) )
+        %br  
+        
+    -content_for :comment_time_line  do
+      -@@comment_months.sort.reverse.each do |months, comments| 
+        =link_to archive(months), 
+          url_for(:comments,:archive,
+          :id =>split_date(months), :month=> archive(months))
+        %br  
+
+-content_for :recipe_last_ten do
+  %ul
+  -@@recipe_months.each do |recipe|
+    %li
+      =image_tag(recipe.image,width:30, height:30)
+      =link_to( recipe.title, url_for(:recipes, :show, :id => recipe.slug))
+    %br 
+-content_for :comment_last_ten do
+  %ul
+  -@@comment_months.each do |comment|
+    %li
+      =link_to(comment.slug.gsub!('-', " "), url_for(:comments, :show, :id => comment.slug))
+    %br 
+.sidebar
+  %ul  
+    %li.sidebar-header
+      %h3
+    %li.sidebar-sub      
+      %span.glyphicon.glyphicon-cutlery
+      &nbsp Recent Recipes 
+    %li.sidebar-content      
+      -if content_for?(:recipe_last_ten)
+        =yield_content  :recipe_last_ten
+      -else  
+        No Recipes
+    %li.sidebar-sub      
+      Recent Comments 
+    %li.sidebar-content     
+      -if content_for?(:comment_last_ten)
+        =yield_content  :comment_last_ten
+      -else  
+        No Comments
+

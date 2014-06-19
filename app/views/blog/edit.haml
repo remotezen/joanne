@@ -1,0 +1,10 @@
+%ul.nav.nav-tabs
+  %li=link_to tag_icon(:list, pat(:list)), url(:blog, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:blog, :new)
+  %li.active=link_to tag_icon(:edit, pat(:edit)), url(:blog, :edit, :id => @post.id)
+
+.tabs-content
+  -form_for :post, url(:blog, :update, :id => @post.id), :method => :put,  :enctype=>"multipart/form-data",:class => 'form-horizontal' do |f|
+    =flashed
+    =error_messages_for(@post)
+    =partial 'blog/form', :locals => { :f => f }

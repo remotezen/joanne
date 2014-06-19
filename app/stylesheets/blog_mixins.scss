@@ -1,0 +1,104 @@
+@import 'variable';
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin radius-tab($radius) {
+  -webkit-border-top-left-radius:   $radius;
+  -webkit-border-top-right-radius:  $radius;
+     
+  -moz-border-radius-topleft:   $radius;
+  -moz-border-radius-topright:  $radius;
+      
+  -ms-border-top-left-radius:   $radius;
+  -ms-border-top-right-radius:  $radius;
+  
+  -o-border-top-left-radius:   $radius;
+  -o-border-top-right-radius:  $radius;
+  border-top-left-radius:   $radius;
+  border-top-right-radius:  $radius;
+}
+
+@mixin border-radius-left($radius) {
+  -webkit-border-top-left-radius:   $radius;
+     
+  -moz-border-radius-topleft:   $radius;
+      
+  -ms-border-top-left-radius:   $radius;
+  
+  -o-border-top-left-radius:   $radius;
+  border-top-left-radius:   $radius;
+}
+@mixin show-panel{ 
+  background: #EEEEBB;
+  padding:8px;
+  @include border-radius(8px);
+  width:33%;
+}
+.units-container{ 
+  margin-top: $margin-top;
+  
+}
+@mixin clean-list{ 
+  display:block;
+  list-style-type:none;
+}
+@mixin clean-link{ 
+  text-decoration:none;
+  color: $link-color;
+
+}
+@mixin mast-header-border{ 
+  border: dotted 1px yellow;
+}
+@mixin absolute-center($height){ 
+  min-height: $height;
+  display: table-cell;
+  vertical-align: middle;
+}
+ul, li{ 
+  @include clean-list;
+}
+a{ 
+  @include clean-link;
+}
+@mixin threeD{ 
+  color: #fff;
+  text-shadow: 0px 1px 1px #4d4d4d;
+}
+@mixin mainpage-border{ 
+  border:solid black 3px;
+}
+@mixin calendar-border{ 
+}
+@mixin flash-div{ 
+  @include border-radius(4px);
+  padding:8px;
+  width:80%;
+  text-align:left;
+  font-size:1.5em;
+  font-family:arial;
+}
+
+
+
+@mixin menu-border-radius($radius) {
+  -webkit-border-radius-left: $radius;
+     -moz-border-radius-left: $radius;
+      -ms-border-radius-left: $radius;
+       -o-border-radius-left: $radius;
+          border-radius:-left $radius;
+}
+
+@mixin inset {
+  //font-family: Rockwell, Georgia, "Times New Roman", Times, serif;
+  text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -2px;
+}
+@mixin title{ 
+  padding:8px;
+}
+
